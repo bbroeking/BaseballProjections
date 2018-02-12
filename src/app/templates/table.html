@@ -1,0 +1,32 @@
+<head>
+    <h1>
+        Table
+    </h1>
+</head>
+
+<body>
+
+    <table>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.Rank }}</td>
+            <td>{{ item.EntryName }}</td>
+            <td>{{ item.Points }}</td>
+            <td>{{ item.Lineup }}</td>
+            <td>{{ item.SP1 }}</td>
+            <td>{{ item.SP2 }}</td>
+            <td>{{ item.C }}</td>
+            <td>{{ item.First }}</td>
+            <td>{{ item.Second }}</td>
+            <td>{{ item.Third }}</td>
+            <td>{{ item.Short }}</td>
+            <td>{{ item.OF1 }}</td>
+            <td>{{ item.OF2 }}</td>
+            <td>{{ item.OF3 }}</td>
+            <td>{{ item.month }}</td>
+            <td>{{ item.date }}</td>
+            <td> {{ item.contest }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>

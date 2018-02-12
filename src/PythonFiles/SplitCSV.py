@@ -29,7 +29,7 @@ for month in months:
             os.makedirs(curr_path+'/split/')
         for root, dirs, files in os.walk(curr_path):
             if not dirs:
-                print "Skipping split in" + root
+                print("Skipping split in" + root)
             else:
                 for file in files:
                     if file.endswith(".xlsx"):
@@ -38,7 +38,7 @@ for month in months:
                         # Break apart the csv file
                         ########################
 
-                        print "month= " +root+ " file= " + file
+                        print("month= " +root+ " file= " + file)
                         df = pd.read_excel(root + "/" + file, encoding='utf-8')
                         team = df[['Rank', 'EntryName', 'Points', 'Lineup']]
                         ownership = df[['Player', "%Drafted", "FPTS"]]
@@ -80,7 +80,7 @@ for month in months:
 
                         titleO = "ownership_"+stripped_day+"_"+contest
                         command = ''.join(["create table IF NOT EXISTS ", titleO, " (o_id INTEGER(200) AUTO_INCREMENT PRIMARY KEY, Player VARCHAR(50), \
-                            Drafted DECIMAL(65, 4), FTPS DECIMAL(65, 4));"]);
+                            Drafted DECIMAL(65, 4), FTPS DECIMAL(65, 4));"])
                         cursor.execute(command)
                         mydb.commit()
 
@@ -115,7 +115,7 @@ for month in months:
                         # Break apart the csv file
                         ########################
 
-                        print "month= " +root+ " file= " + file
+                        print("month= " +root+ " file= " + file)
                         df = pd.read_csv(root + "/" + file, encoding='utf-8')
                         team = df[['Rank', 'EntryName', 'Points', 'Lineup']]
                         ownership = df[['Player', "%Drafted", "FPTS"]]
@@ -123,7 +123,6 @@ for month in months:
                         ownership['%Drafted'] = ownership['%Drafted'].map(lambda x: str(x)[:-1])
 
                         team = team.dropna()
-                        print team.head(5)
                         ownership = ownership.dropna()
 
                         contest = str(file)[:-5]
@@ -162,7 +161,7 @@ for month in months:
 
                         titleO = "ownership_"+stripped_day+"_"+contest
                         command = ''.join(["create table IF NOT EXISTS ", titleO, " (o_id INTEGER(200) AUTO_INCREMENT PRIMARY KEY, Player VARCHAR(50), \
-                            Drafted DECIMAL(65, 4), FTPS DECIMAL(65, 4));"]);
+                            Drafted DECIMAL(65, 4), FTPS DECIMAL(65, 4));"])
                         cursor.execute(command)
                         mydb.commit()
 

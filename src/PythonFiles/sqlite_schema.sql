@@ -1,0 +1,20 @@
+CREATE TABLE lineups (
+ index integer PRIMARY KEY,
+ rank integer NOT NULL,
+ entryname text NOT NULL,
+ points integer NOT NULL,
+ Lineup text NOT NULL,
+ sp1 text NOT NULL,
+ sp2 text NOT NULL,
+ c text NOT NULL,
+ oneb text NOT NULL,
+ twob text NOT NULL,
+ threeb text NOT NULL,
+ ss text NOT NULL,
+ of1 text NOT NULL,
+ of2 text NOT NULL,
+ of3 text NOT NULL,
+ month text NOT NULL,
+ date text NOT NULL,
+ contest text NOT NULL
+);
