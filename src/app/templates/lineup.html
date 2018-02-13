@@ -1,0 +1,23 @@
+<table>
+    {% for lineup in lineups %}
+    <tr>
+        <td>{{ lineup.Rank }}</td>
+        <td>{{ lineup.EntryName }}</td>
+        <td>{{ lineup.Points }}</td>
+        <td>{{ lineup.Lineup }}</td>
+        <td>{{ lineup.SP1 }}</td>
+        <td>{{ lineup.SP2 }}</td>
+        <td>{{ lineup.C }}</td>
+        <td>{{ lineup.First }}</td>
+        <td>{{ lineup.Second }}</td>
+        <td>{{ lineup.Third }}</td>
+        <td>{{ lineup.Short }}</td>
+        <td>{{ lineup.OF1 }}</td>
+        <td>{{ lineup.OF2 }}</td>
+        <td>{{ lineup.OF3 }}</td>
+        <td>{{ lineup.month }}</td>
+        <td>{{ lineup.date }}</td>
+        <td> {{ lineup.contest }}</td>
+    </tr>
+    {% endfor %}
+</table>

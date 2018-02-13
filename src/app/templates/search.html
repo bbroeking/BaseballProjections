@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+
+<body>
+    <form method="POST" class="form-inline" action="{{ url_for('search') }}" id="mon">
+        {{ mf.csrf_token }}
+        <select class="form-control" id="month" name="month">
+            {% for month in months %}
+        <option value= "{{ month }}" SELECTED>{{ month }}</option>"
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <form method="POST" class="form-inline" action="{{ url_for('search') }}" id="dat">
+        {{ df.csrf_token }}
+        <select class="form-control" id="date" name="date">
+                {% for date in dates %}
+            <option value= "{{ date }}" SELECTED>{{ date }}</option>"
+                {% endfor %}
+            </select>
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- action="{{ url_for('lineup') }} -->
+    <form method="POST" class="form-inline" id="con">
+        {{ cf.csrf_token }}
+        <select class="form-control" id="contest" name="contest">
+                    {% for contest in contests %}
+                <option value= "{{ contest }}" SELECTED>{{ contest }}</option>"
+                    {% endfor %}
+                </select>
+        <input type="submit" value="Submit">
+    </form>
+
+    <table>
+        {% for lineup in lineups %}
+        <tr>
+            <td>{{ lineup.EntryName }}</td>
+            <td>{{ lineup.Points }}</td>
+            <td>{{ lineup.Lineup }}</td>
+            <td>{{ lineup.SP1 }}</td>
+            <td>{{ lineup.SP2 }}</td>
+            <td>{{ lineup.C }}</td>
+            <td>{{ lineup.First }}</td>
+            <td>{{ lineup.Second }}</td>
+            <td>{{ lineup.Third }}</td>
+            <td>{{ lineup.Short }}</td>
+            <td>{{ lineup.OF1 }}</td>
+            <td>{{ lineup.OF2 }}</td>
+            <td>{{ lineup.OF3 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+</body>
+
+</html>

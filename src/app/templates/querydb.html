@@ -1,0 +1,13 @@
+<body>
+    <h2> Example Search
+    </h2>
+    <p>
+        SELECT oneb, COUNT(*) as 'num' FROM lineups GROUP BY oneb ORDER BY COUNT(*) DESC;
+    </p>
+
+    <form method="POST" action="{{ url_for('lineup') }}">
+        <input name="text">
+        <input type="submit">
+    </form>
+
+</body>
