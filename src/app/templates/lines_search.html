@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+
+<body>
+    <form method="POST" class="form-inline" action="{{ url_for('vegas') }}" id="mon">
+        {{ mf.csrf_token }}
+        <select class="form-control" id="month" name="month">
+            {% for month in months %}
+        <option value= "{{ month }}" SELECTED>{{ month }}</option>"
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <form method="POST" class="form-inline" action="{{ url_for('vegas') }}" id="dat">
+        {{ df.csrf_token }}
+        <select class="form-control" id="date" name="date">
+                {% for date in dates %}
+            <option value= "{{ date }}" SELECTED>{{ date }}</option>"
+                {% endfor %}
+            </select>
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- action="{{ url_for('lineup') }} -->
+    <form method="POST" class="form-inline" id="con">
+        {{ cf.csrf_token }}
+        <select class="form-control" id="contest" name="contest">
+                    {% for contest in contests %}
+                <option value= "{{ contest }}" SELECTED>{{ contest }}</option>"
+                    {% endfor %}
+                </select>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+</html>

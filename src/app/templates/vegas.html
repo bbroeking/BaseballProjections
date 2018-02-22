@@ -1,0 +1,78 @@
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+
+                <table class="table table-striped" .table-responsive>
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Drafted</th>
+                            <th>FPTS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for owner in ownerships %}
+                        <tr>
+                            <th scope="row">{{ owner.player }}</th>
+                            <td>{{ owner.drafted }}</td>
+                            <td>{{ owner.FPTS }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                </table>
+
+            </div>
+            <div class="col-md-6">
+                <table class="table table-striped" .table-responsive>
+                    <thead>
+                        <th scope="row">Away Team</th>
+                        <th>Home Team</th>
+                        <th>Away Starter</th>
+                        <th>Home Starter</th>
+                        <th>Start Time</th>
+                        <th>Away Final Score</th>
+                        <th>Home Final Score</th>
+                        <th>Away Bovada</th>
+                        <th>Home Bovada</th>
+                    </thead>
+                    <tbody>
+                        {% for line in lines %}
+                        <tr>
+                            <td>{{ line.Away_Team }}</td>
+                            <td>{{ line.Home_Team }}</td>
+                            <td>{{ line.Away_Starter }}</td>
+                            <td>{{ line.Home_Starter }}</td>
+                            <td>{{ line.Start_Time }}</td>
+                            <td>{{ line.Away_Final_Score }}</td>
+                            <td>{{ line.Home_Final_Score }}</td>
+                            <td>{{ line.Away_Bovada }}</td>
+                            <td>{{ line.Home_Bovada }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+</body>

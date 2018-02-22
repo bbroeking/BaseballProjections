@@ -1,23 +1,68 @@
-<table>
-    {% for lineup in lineups %}
-    <tr>
-        <td>{{ lineup.Rank }}</td>
-        <td>{{ lineup.EntryName }}</td>
-        <td>{{ lineup.Points }}</td>
-        <td>{{ lineup.Lineup }}</td>
-        <td>{{ lineup.SP1 }}</td>
-        <td>{{ lineup.SP2 }}</td>
-        <td>{{ lineup.C }}</td>
-        <td>{{ lineup.First }}</td>
-        <td>{{ lineup.Second }}</td>
-        <td>{{ lineup.Third }}</td>
-        <td>{{ lineup.Short }}</td>
-        <td>{{ lineup.OF1 }}</td>
-        <td>{{ lineup.OF2 }}</td>
-        <td>{{ lineup.OF3 }}</td>
-        <td>{{ lineup.month }}</td>
-        <td>{{ lineup.date }}</td>
-        <td> {{ lineup.contest }}</td>
-    </tr>
-    {% endfor %}
-</table>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="col-md-6">
+
+            <table class="table table-striped" .table-responsive>
+                <thead>
+                    <tr>
+                        <th>#Rank</th>
+                        <th>Entry Name</th>
+                        <th>Points</th>
+                        <th>SP1</th>
+                        <th>SP2</th>
+                        <th>C</th>
+                        <th>1B</th>
+                        <th>2B</th>
+                        <th>3B</th>
+                        <th>SS</th>
+                        <th>OF1</th>
+                        <th>OF2</th>
+                        <th>OF3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for lineup in lineups %}
+                    <tr>
+                        <th scope="row">{{ lineup.Rank }}</th>
+                        <td>{{ lineup.EntryName }}</td>
+                        <td>{{ lineup.Points }}</td>
+                        <td>{{ lineup.SP1 }}</td>
+                        <td>{{ lineup.SP2 }}</td>
+                        <td>{{ lineup.C }}</td>
+                        <td>{{ lineup.First }}</td>
+                        <td>{{ lineup.Second }}</td>
+                        <td>{{ lineup.Third }}</td>
+                        <td>{{ lineup.Short }}</td>
+                        <td>{{ lineup.OF1 }}</td>
+                        <td>{{ lineup.OF2 }}</td>
+                        <td>{{ lineup.OF3 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+
+        </div>
+        <div class="col-md-6">
+            <p> Hello </p>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+</body>
